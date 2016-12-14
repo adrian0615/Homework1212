@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='findParity'/>
+        <page name='Rubix'/>
+        <page name='dessert'/>
+        <page name='rotZeroNoPunctuation'/>
+        <page name='rotZero'/>
+        <page name='rot13Lossy'/>
+        <page name='rot13 pt 2'/>
+        <page name='OneStarChallenge'/>
+        <page name='Playaround'/>
+    </pages>
+</playground>

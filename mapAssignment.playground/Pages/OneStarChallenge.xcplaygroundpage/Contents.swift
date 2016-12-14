@@ -1,0 +1,1 @@
+//Implement a function, rotN which will accept an integer n and return a function which will rotate input given to it by n.
