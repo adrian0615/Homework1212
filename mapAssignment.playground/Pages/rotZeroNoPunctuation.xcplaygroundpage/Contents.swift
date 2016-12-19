@@ -2,23 +2,57 @@
 
 //
 
-let alphabet: [Character] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-//
+let letters: [Character] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-var dictionary: [Character: Int] = [:]
-for (number, letter) in alphabet.enumerated() {
-    dictionary[letter] = number
+var rot0Lookup: [Character: Int] = [:]
+for (number, letter) in letters.enumerated() {
+    rot0Lookup[letter] = number
 }
 
-dictionary.description
+func numToString(_ number: Int) -> String {
+    return "\(number)"
+}
 
-//take a dictionary key and return it's value in a string
+numToString(3)
 
-//func zeroNoPunc(input: String) -> [String] {
-//    let chars = input.characters
- //       if chars.contains(alphabet.description
-//    }
-//}
+    
+func charToNumber(character: Character) -> Int {
+    for (char, number) in rot0Lookup {
+        if char == character {
+            return number
+        }
+    }
+    return 27
+}
+    
+charToNumber(character: "d")
+    
+
+func rotZeroNoPunctuation(input: String) -> String {
+    let nums = input.characters.map(charToNumber)
+    let numString = nums.map(numToString)
+    let together = numString.joined(separator: "-")
+    return together
+}
+
+
+
+
+rotZeroNoPunctuation(input: "candy")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
