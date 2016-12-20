@@ -39,15 +39,13 @@ func numToChar(num: Int) -> Character? {
 
 func charToRot0String(character: Character) -> String {
     let numbers: [Character : String] = ["1": "A", "2": "B", "3": "C", "4": "D", "5": "E", "6": "F", "7": "G", "8": "H", "9": "I"]
-    if numbers[character] == nil {
-        return String(character)
-    } else {
-    if let converted = charToNumber(character: character) {
-        return String(describing: converted)
-    } else if numbers[character] != nil {
-        let x = numbers[character]
-        return x!
-    }
+    if let converted = charToNumber(character: character)  {
+            return String(describing: converted)
+        } else if numbers[character] != nil {
+            let x = numbers[character]
+            return x!
+        }
+    return String(describing: character)
 }
 
 charToNumber(character: "d")
@@ -64,6 +62,7 @@ func rot13Pt2(input: String) -> String {
 
 rot13Pt2(input: "H1a3W!")
 
+rot13Pt2(input: "I AM 4345")
 
 rot13Pt2(input: "candy")
 

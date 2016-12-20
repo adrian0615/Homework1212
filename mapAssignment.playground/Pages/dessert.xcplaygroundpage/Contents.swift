@@ -2,35 +2,35 @@
 
 
 
-func convertString(input: String) -> String {
-    if input == "ice cream" {
-        return "yogurt"
-    } else if input == "jimmies" {
-        return "sprinkles"
-    } else {
-        return input
-    }
-}
-
-
-convertString(input: "cherry")
-
-func mapDessert(input: [String: String]) -> [String: String] {
+func convertDictionary(input: [String: String]) -> [String: String] {
     var newInput = input
-    if newInput == ["ice cream": "cherry"] {
-        newInput["ice cream"] = nil
-        newInput["yogurt"] = "cherry"
-        return newInput
-    } else if newInput == ["toppings": "jimmies"] {
-        newInput["toppings"] = "sprinkles"
-        return newInput
-    } else {
-        return input
+    if let keyForIceCream = newInput.removeValue(forKey: "ice cream") {
+        newInput["yogurt"] = keyForIceCream
     }
+        
+    if let toppingsValue = newInput["toppings"], toppingsValue == "jimmies" {
+        newInput["toppings"] = "sprinkles"
+    }
+    
+    return newInput
 }
 
-mapDessert(input: ["ice cream": "cherry"])
 
+
+
+
+func dessert(input: [[String: String]]) -> [[String: String]] {
+     return input.map(convertDictionary)
+}
+
+    
+    
+    
+    
+    
+    
+dessert(input: [["ice cream": "cherry"], ["toppings": "jimmies"]])
+dessert(input: [["soup": "oysters"]])
 
 
 

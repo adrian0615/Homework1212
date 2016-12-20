@@ -1,6 +1,6 @@
 //Write a function which takes a list of integers and returns a list of instances of an enum named Parity with two cases, even, and odd.
 
-let list = [1, 2, 3, 4, 5]
+let list = [1, 2, 3, 4, 5, 6, 7, 3000]
 enum Parity {
     case even
     case odd
